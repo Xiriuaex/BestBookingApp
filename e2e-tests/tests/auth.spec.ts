@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const UI_URL = 'http://localhost:5173/'
 
-test('should allow the user to sign in', async ({ page }) => {
+test('Should allow the user to Sign In', async ({ page }) => {
   //page is the browser window, what we deal in:
   await page.goto(UI_URL);
 
@@ -23,7 +23,7 @@ test('should allow the user to sign in', async ({ page }) => {
 
 });
 
-test("should allow user to register",async ({ page }) => {
+test("Should allow user to Register",async ({ page }) => {
 
   const test_email = `test_random_mail${Math.floor(Math.random()*9000)+9000}@gmail.com`;
   await page.goto(UI_URL);
@@ -33,9 +33,9 @@ test("should allow user to register",async ({ page }) => {
 
   await expect(page.getByRole("heading", {name: "Create an Account"})).toBeVisible();
 
-  await page.locator("[name=firstName]").fill("test_firstName");
-  await page.locator("[name=lastName]").fill("test_lastName");
-  await page.locator("[name=email]").fill(test_email);
+  await page.locator("[name=firstName]").fill("test_firstName1");
+  await page.locator("[name=lastName]").fill("test_lastName1");
+  await page.locator("[name=email]").fill("test_email3@gmail.com");
   await page.locator("[name=password]").fill("test_emailcc");
   await page.locator("[name=confirmPassword]").fill("test_emailcc");
 
@@ -45,6 +45,5 @@ test("should allow user to register",async ({ page }) => {
   await expect(page.getByRole("link", {name: "My Bookings"})).toBeVisible();
   await expect(page.getByRole("link", {name: "My Hotels"})).toBeVisible();
   await expect(page.getByRole("button", {name: "Sign Out"})).toBeVisible();
-  
 
 })

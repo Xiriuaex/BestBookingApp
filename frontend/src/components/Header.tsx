@@ -8,15 +8,15 @@ const Header = () => {
   const { isLoggedIn } = useAppContext();
 
   return (
-    <div className='bg-[#66fcf2] py-6'>
+    <div className='bg-[#66fcf2] text-[#3e3e3e] py-6'>
     <div className='container mx-auto flex justify-between'>
-        <span className='text-3xl text-[#3e3e3e] font-bold tracking-tight'>
+        <span className='text-3xl font-bold tracking-tight'>
             <Link to={"/"}>Best<span className='text-[#ff2d2d]'>Booking</span></Link>
         </span>
         <span className='flex space-x-2 items-center'>
           {isLoggedIn ? <>
-            <Link className='flex items-center text-[#3e3e3e] px-3 font-bold hover:scale-90 duration-700' to={"/my-bookings"}>My Bookings</Link>
-            <Link className='flex items-center text-[#3e3e3e] px-3 font-bold hover:scale-90 duration-700' to={"/my-hotels"}>My Hotels</Link>
+            <Link className='flex items-center px-3 font-bold hover:scale-90 duration-700' to={"/my-bookings"}>My Bookings</Link>
+            <Link className='flex items-center px-3 font-bold hover:scale-90 duration-700' to={"/my-hotels"}>My Hotels</Link>
             <SignOutButton />
           </> 
           :
