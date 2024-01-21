@@ -26,6 +26,8 @@ test('Should allow the user to Sign In', async ({ page }) => {
 test("Should allow user to Register",async ({ page }) => {
 
   const test_email = `test_random_mail${Math.floor(Math.random()*9000)+9000}@gmail.com`;
+  const test_Fname = `testFName${Math.floor(Math.random()*1000)+1000}`
+  const test_Lname = `testLName${Math.floor(Math.random()*1000)+1000}`
   await page.goto(UI_URL);
 
   await page.getByRole("link", {name: "Sign In"}).click();
@@ -33,9 +35,9 @@ test("Should allow user to Register",async ({ page }) => {
 
   await expect(page.getByRole("heading", {name: "Create an Account"})).toBeVisible();
 
-  await page.locator("[name=firstName]").fill("test_firstName1");
-  await page.locator("[name=lastName]").fill("test_lastName1");
-  await page.locator("[name=email]").fill("test_email3@gmail.com");
+  await page.locator("[name=firstName]").fill(test_Fname);
+  await page.locator("[name=lastName]").fill(test_Lname);
+  await page.locator("[name=email]").fill(test_email);
   await page.locator("[name=password]").fill("test_emailcc");
   await page.locator("[name=confirmPassword]").fill("test_emailcc");
 

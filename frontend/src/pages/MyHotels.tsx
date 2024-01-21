@@ -29,24 +29,24 @@ const MyHotels = () => {
                     <h2 className="text-2xl font-bold">{hotel.name}</h2>
                     <div className="whitespace-pre-line">{hotel.description}</div>
                     <div className="grid grid-cols-5 gap-2 text-sm">
-                        <div className="border border-slate-300 rounded-sm p-3 flex items-center transition hover:scale-95 hover:ease-linear hover:duration-[1s]">
+                        <div className="border border-slate-300 rounded-sm p-3 flex items-center hover:scale-95 duration-700">
                             <BsMap className="mr-2"/> 
                             {hotel.city}, {hotel.country}
                         </div>
-                        <div className="border border-slate-300 rounded-sm p-3 flex items-center">
+                        <div className="border border-slate-300 rounded-sm p-3 flex items-center hover:scale-95 duration-700">
                             <BsBuilding className="mr-2"/> 
                             {hotel.type}
                         </div>
-                        <div className="border border-slate-300 rounded-sm p-3 flex items-center">
+                        <div className="border border-slate-300 rounded-sm p-3 flex items-center hover:scale-95 duration-700">
                             <BiMoney className="mr-2"/> 
                             <BiRupee />
                             {hotel.pricePerNight}/N
                         </div>
-                        <div className="border border-slate-300 rounded-sm p-3 flex items-center">
+                        <div className="border border-slate-300 rounded-sm p-3 flex items-center hover:scale-95 duration-700">
                             <BiHotel className="mr-2"/> 
                             {hotel.adultCount} adults, {hotel.childCount} children
                         </div>
-                        <div className="border border-slate-300 rounded-sm p-3 flex items-center">
+                        <div className="border border-slate-300 rounded-sm p-3 flex items-center hover:scale-95 duration-700">
                             <BiStar className="mr-2"/> 
                             {hotel.starRating} Star Rating
                         </div>
