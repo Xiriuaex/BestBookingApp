@@ -1,7 +1,7 @@
 
 const Hero = () => {
   return (
-    <div className='bg-[#E4F1FF] pt-24 h-[45vh]'>
+    <div className='bg-slate-200 pt-24 h-[45vh]'>
       <div className='container gap-2 flex flex-col'>
         <h1 className='text-5xl text-[#ff2d2d] font-bold'>
             SAVE ON HOTELS

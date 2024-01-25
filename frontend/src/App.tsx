@@ -10,6 +10,8 @@ import AddHotel from './pages/AddHotel';
 import { useAppContext } from './contexts/AppContext';
 import MyHotels from './pages/MyHotels';
 import EditHotel from './pages/EditHotel';
+import Search from './pages/Search';
+import Detail from './pages/Detail';
 
 
   
@@ -21,10 +23,36 @@ const App = () => {
   return (
     <Router>
       <Routes>
-          <Route path='/' element={<Layout><p>home page</p></Layout>}></Route>
-          <Route path='/dev' element={<Layout><p>web dev</p></Layout>}></Route>
-          <Route path='/register' element={<Layout><Register/></Layout>}></Route>
-          <Route path='/sign-in' element={<Layout><SignIn/></Layout>}></Route>
+          <Route 
+            path='/' 
+            element={<Layout><p>home page</p></Layout>}>
+          </Route>
+
+          <Route 
+            path='/dev' 
+            element={<Layout><p>web dev</p></Layout>}>
+          </Route>
+
+          <Route 
+            path='/register' 
+            element={<Layout><Register/></Layout>}>
+          </Route>
+
+          <Route 
+            path='/sign-in' 
+            element={<Layout><SignIn/></Layout>}>
+          </Route>
+
+          <Route 
+            path='/search' 
+            element={<Layout><Search /></Layout>}>
+          </Route>
+
+          <Route 
+            path='/detail/:hotelId'
+            element={<Layout><Detail /></Layout>}>
+          </Route>
+
           {isLoggedIn && (
             <>
               <Route 
