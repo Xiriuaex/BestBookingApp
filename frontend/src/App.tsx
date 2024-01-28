@@ -13,6 +13,8 @@ import EditHotel from './pages/EditHotel';
 import Search from './pages/Search';
 import Detail from './pages/Detail';
 import Booking from './pages/Booking';
+import MyBookings from './pages/MyBookings';
+import Home from './pages/Home';
 
 
 const App = () => {  
@@ -24,14 +26,9 @@ const App = () => {
       <Routes>
           <Route 
             path='/' 
-            element={<Layout><p>home page</p></Layout>}>
+            element={<Layout><Home /></Layout>}>
           </Route>
-
-          <Route 
-            path='/dev' 
-            element={<Layout><p>web dev</p></Layout>}>
-          </Route>
-
+          
           <Route 
             path='/register' 
             element={<Layout><Register/></Layout>}>
@@ -54,6 +51,14 @@ const App = () => {
 
           {isLoggedIn && (
             <>
+              <Route 
+                path='/my-bookings' 
+                element={
+                  <Layout>
+                    <MyBookings />
+                  </Layout>
+                }
+              />
               <Route 
                 path='/hotel/:hotelId/booking' 
                 element={

@@ -13,7 +13,7 @@ const Header = () => {
         <span className='text-3xl font-bold tracking-tight'>
             <Link to={"/"}>Best<span className='text-[#ff2d2d]'>Booking</span></Link>
         </span>
-        <span className='flex space-x-2 items-center'>
+        <span className='  flex space-x-2 items-center'>
           {isLoggedIn ? <>
             <Link className='flex items-center px-3 font-bold hover:scale-90 duration-700' to={"/my-bookings"}>My Bookings</Link>
             <Link className='flex items-center px-3 font-bold hover:scale-90 duration-700' to={"/my-hotels"}>My Hotels</Link>
