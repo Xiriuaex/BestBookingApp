@@ -214,8 +214,7 @@ router.post("/:hotelId/bookings", verifyToken,
 
         const hotel = await Hotel.findByIdAndUpdate(
           { _id: req.params.hotelId},
-          { $addToSet:
-            {$push: {bookings: newBooking},}
+          { $addToSet:{bookings: newBooking}
           }
         );
 
