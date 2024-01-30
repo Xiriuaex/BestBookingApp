@@ -33,7 +33,7 @@ const SearchBar = () => {
     maxDate.setFullYear(maxDate.getFullYear() + 1);
     
   return (
-    <form onSubmit={handleSubmit} className="mt-8 p-3 bg-gray-500 bg-opacity-30 rounded-2xl shadow-lg grid grid-cols-2 lg:grid-cols-5 items-center gap-3">
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 mt-8 p-3 bg-gray-500 bg-opacity-30 rounded-2xl shadow-lg items-center gap-3">
       <div className="flex flex-row items-center flex-1 bg-white p-2 rounded-xl">
         <BiWorld size={20} className="mr-2"/>
         <input

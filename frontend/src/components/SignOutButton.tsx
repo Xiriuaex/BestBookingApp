@@ -27,7 +27,7 @@ const SignOutButton = () => {
 
   return (
     <div>
-      <button onClick={handleClick} className='flex items-center h-8 px-3 font-bold rounded-lg text-[#3e3e3e] bg-[#bbeeff] hover:scale-90 duration-700'>Sign Out</button>
+      <button onClick={handleClick} className='flex h-9 w-[5rem] text-[15.5px] justify-center items-center font-bold rounded-lg text-[#3e3e3e] bg-[#bbeeff] hover:scale-90 duration-700'>Sign Out</button>
     </div>
   )
 }

@@ -16,6 +16,7 @@ type AppContext = {
     showToast: (toastMessage: ToastMessage) => void;
     isLoggedIn: boolean,
     stripePromise: Promise<Stripe | null>;
+    isInSignIn: (isTrue: boolean) => boolean;
 };
 
 const AppContext = React.createContext<AppContext | undefined>(undefined);
@@ -26,6 +27,9 @@ const stripePromise = loadStripe(STRIPE_PUB_KEY);
 export const AppContextProvider = ({children}: {children: React.ReactNode}) => {
 
     const [toast, setToast] = useState<ToastMessage | undefined>(undefined);
+    
+    //disable sign in page while in sign in page:
+    const [signIn, setSignIn] = useState(false);
 
     const { isError } = useQuery("validateToken", apiClient.validateToken, {
         retry: false,
@@ -38,6 +42,10 @@ export const AppContextProvider = ({children}: {children: React.ReactNode}) => {
             },
             isLoggedIn: !isError,
             stripePromise,
+            isInSignIn: (isTrue) => {
+                setSignIn(isTrue);
+                return signIn;
+            }
         }}>
             {toast && <Toast message={toast.message} type={toast.type} onClose= {() => setToast(undefined)}/>}
             {children}

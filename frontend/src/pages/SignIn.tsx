@@ -3,6 +3,7 @@ import { useMutation, useQueryClient } from "react-query";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAppContext } from "../contexts/AppContext";
 import * as apiClient from '../api-client';
+import { useEffect } from "react";
 
 export type SignInFormData = { 
     email: string,
@@ -11,11 +12,13 @@ export type SignInFormData = {
 
 const SignIn = () => {
     
-    const { showToast } = useAppContext();
+    const { showToast, isInSignIn } = useAppContext();
     const queryClient = useQueryClient();
     const location = useLocation();
 
-
+    useEffect(() => {
+        isInSignIn(true);
+    })
     const { register, handleSubmit, formState: {errors}} = useForm<SignInFormData>();
 
     const navigate = useNavigate();
