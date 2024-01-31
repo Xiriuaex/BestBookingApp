@@ -16,8 +16,8 @@ const MyBookings = () => {
     <div className="space-y-5">
       <h1 className="text-3xl font-bold">My Bookings</h1>
       {hotels.map((hotel) => (
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_3fr] border border-slate-300 rounded-lg p-8 gap-5">
-          <div className="lg:w-full lg:h-[250px]">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] border border-slate-300 rounded-lg p-8 gap-5">
+          <div className="lg:w-full  md:w-[230px] h-[250px]">
             <img
               src={hotel.imageUrls[0]}
               className="w-full h-full object-cover object-center"

@@ -10,11 +10,11 @@ const TypeSection = () => {
   return (
     <div>
       <h2 className="text-xl font-bold mb-3">Hotel Type</h2>
-      <div className="grid grid-cols-5 gap-2">
+      <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
         {hotelTypes.map((type) => (
             <label className={
-              typeWatch === type ? "cursor-pointer bg-blue-300 text-sm rounded-full px-6 py-2 font-semibold" 
-              : "cursor-pointer hover:bg-blue-100 active:bg-blue-200 bg-gray-300 text-sm rounded-full px-6 py-2 font-semibold" 
+              typeWatch === type ? "cursor-pointer bg-blue-300 text-xs md:text-sm rounded-2xl px-4 pt-3 pb-2 font-semibold" 
+              : "cursor-pointer hover:bg-blue-100 active:bg-blue-200 bg-gray-300 text-xs md:text-sm rounded-2xl px-4 pt-3 pb-2 font-semibold" 
             }>
                 <input type="radio" className="hidden" value={type} {...register("type", { required: "*This field is required"})} />
                 <span>{type}</span>

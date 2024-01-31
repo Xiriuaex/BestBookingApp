@@ -9,13 +9,13 @@ type Props = {
 const SearchResultsCard = ({ hotel }: Props ) => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] border rounded-xl shadow-md bg-slate-200 bg-opacity-80 p-8 gap-8">
-        <div className="w-full h-[300px]">
+        <div className="w-full h-[200px] sm:h-[300px]">
           <img
             src={hotel.imageUrls[0]}
             className="w-full h-full object-cover object-center"
           />
         </div>
-        <div className="grid grid-rows-[1fr_2fr_1fr]">
+        <div className="grid grid-rows-[.5fr_1fr_.7fr] sm:grid-rows-[1fr_2fr_1fr]">
           <div>
             <div className="flex items-center">
               <span className="flex">
@@ -37,10 +37,10 @@ const SearchResultsCard = ({ hotel }: Props ) => {
             <div className="line-clamp-4">{hotel.description}</div>
           </div>
   
-          <div className="grid grid-cols-2 items-end whitespace-nowrap">
-            <div className="items-center grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 items-end whitespace-nowrap">
+            <div className="items-center grid grid-cols-2 gap-3 sm:gap-4">
               {hotel.facilities.slice(0, 3).map((facility) => (
-                <span className="bg-slate-300 p-2 rounded-lg font-bold text-xs lg:text-[10px] whitespace-nowrap">
+                <span className="bg-slate-300 p-2 rounded-lg font-bold text-[10px] sm:text-[11px] whitespace-nowrap">
                   {facility}
                 </span>
               ))}
@@ -50,7 +50,7 @@ const SearchResultsCard = ({ hotel }: Props ) => {
               </span>
             </div>
 
-            <div className="flex flex-col items-end gap-2">
+            <div className="flex flex-col items-start sm:items-end gap-2">
               <span className="font-bold ">£{hotel.pricePerNight} per night</span>
               <Link
                 to={`/detail/${hotel._id}`}
